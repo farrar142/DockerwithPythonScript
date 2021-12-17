@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  green_web:
+    image: green
+    build: .
+    container_name: green_web
+    expose:
+      - "8010"
+    volumes:
+      - .:/usr/src/app:z
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./location/location.conf:/etc/nginx/location.d/location.conf
+    ports:
+      - "2000:80"
+    depends_on:
+      - green_web

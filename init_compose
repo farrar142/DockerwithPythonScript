@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  _color_web:
+    image: _color
+    build: .
+    container_name: _color_web
+    expose:
+      - "_ports"
+    volumes:
+      - .:/usr/src/app:z
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./location/location.conf:/etc/nginx/location.d/location.conf
+    ports:
+      - "2000:80"
+    depends_on:
+      - _color_web
