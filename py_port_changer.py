@@ -18,20 +18,22 @@ def port_change(port, color):
 
     # try:
     #     # 파일이 존재하지 않으면
-    #     test = open("./_location.conf", "r")
+    #     test = open("./init_config", "r")
     #     test.close()
     # except:
     #     # 만들어야됨.
-    #     _tmp = open("./_location.conf", "w")
+    #     _tmp = open("./init_config", "w")
     #     _tmp.write("location / {\n" +
     #                "    proxy_pass http://honeycombpizza.link:_port;\n" +
     #                "}")
+    #       그럴리는
+    #           없      음
     #     _tmp.close()
     #     # 복사될 파일
     #     tmp = open(f"{path}/location.conf", "w")
     #     tmp.close()
 
-    static = open("./_location.conf", "r", encoding='utf8')
+    static = open("./init_config", "r", encoding='utf8')
     dynamic = open(f"{path}/location.conf", "w", encoding='utf8')
     for i in static:
         try:

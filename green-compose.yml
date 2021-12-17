@@ -6,7 +6,7 @@ services:
     build: .
     container_name: green_web
     expose:
-      - "8000"
+      - "8010"
     volumes:
       - .:/usr/src/app:z
   nginx:

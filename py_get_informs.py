@@ -78,11 +78,7 @@ def get_informs():
     cname,cid,imgname,status,port,ip
     """
     imgs = get_docker_imgs()
-    for i in imgs:
-        print(i)
     container = get_docker_containers()
-    for i in container:
-        print(i)
     for i in container:
         for j in imgs:
             try:

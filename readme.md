@@ -5,7 +5,7 @@
 EC2에 올린다면 nginx를 도커밖으로 빼서
 systemctl restart nginx로 더 시간을 줄일 수 있을 것 같습니다.
 
-### python get_state.py
+### python py_get_state.py
 
 도커컴포즈업 명령입니다.
 이후 get_state할 때마다 nginx 가 :8000과 8010으로 연결을 바꿉니다.

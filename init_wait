@@ -17,3 +17,4 @@
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver 0.0.0.0:_ports
+## lf crlf문제가 있는 것 같음.
