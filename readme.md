@@ -8,4 +8,8 @@ systemctl restart nginx로 더 시간을 줄일 수 있을 것 같습니다.
 ### python get_state.py
 
 도커컴포즈업 명령입니다.
-이후 get_state할 때마다 localhost:8000과 8010으로 장고에 접속가능합니다.
+이후 get_state할 때마다 nginx 가 :8000과 8010으로 연결을 바꿉니다.
+
+접속 주소는
+http://localhost:2000/
+입니다.

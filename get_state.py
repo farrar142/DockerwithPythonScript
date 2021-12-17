@@ -43,7 +43,7 @@ else:
     print("컨테이너 없음 그린을 빌드합니다.")
     make_compose("green", green_port, host_port)
     make_wait(green_port)
-    container_port = red_port
+    container_port = green_port
     cur_name = "green"
 
 port_change(container_port, cur_name)
