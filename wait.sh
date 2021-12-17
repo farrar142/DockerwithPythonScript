@@ -17,3 +17,4 @@
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8010
+##crlf lf 문제가 있어서 실행이 안됨.
