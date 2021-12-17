@@ -16,20 +16,20 @@ def port_change(port, color):
     if not os.path.isdir(path):
         os.mkdir(path)
 
-    try:
-        # 파일이 존재하지 않으면
-        test = open("./_location.conf", "r")
-        test.close()
-    except:
-        # 만들어야됨.
-        _tmp = open("./_location.conf", "w")
-        _tmp.write("location / {\n" +
-                   "    proxy_pass http://honeycombpizza.link:_port;\n" +
-                   "}")
-        _tmp.close()
-        # 복사될 파일
-        tmp = open(f"{path}/location.conf", "w")
-        tmp.close()
+    # try:
+    #     # 파일이 존재하지 않으면
+    #     test = open("./_location.conf", "r")
+    #     test.close()
+    # except:
+    #     # 만들어야됨.
+    #     _tmp = open("./_location.conf", "w")
+    #     _tmp.write("location / {\n" +
+    #                "    proxy_pass http://honeycombpizza.link:_port;\n" +
+    #                "}")
+    #     _tmp.close()
+    #     # 복사될 파일
+    #     tmp = open(f"{path}/location.conf", "w")
+    #     tmp.close()
 
     static = open("./_location.conf", "r", encoding='utf8')
     dynamic = open(f"{path}/location.conf", "w", encoding='utf8')
