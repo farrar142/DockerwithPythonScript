@@ -4,6 +4,18 @@ from port_changer import *
 from wait_changer import *
 import os
 import time
+
+
+def revise_files(color, web_port, host_port):
+    global container_port, cur_name
+    _color = "red" if color == "green" else "green"
+    print(f"현재 {color}. {_color}을 빌드합니다.")
+    make_compose("green", web_port, host_port)
+    make_wait(web_port)
+    container_port = web_port
+    cur_name = "green"
+
+
 # 초기 세팅값들
 host_port = 8000
 red_port = 8000
@@ -28,23 +40,11 @@ container_port = 0
 # 비교 시퀀스
 if current_running:
     if "red" in current_running[0]:
-        print("현재 레드. 그린을 빌드합니다.")
-        make_compose("green", green_port, host_port)
-        make_wait(green_port)
-        container_port = green_port
-        cur_name = "green"
+        revise_files("Green", green_port, host_port)
     else:
-        print("현재 그린, 레드을 빌드합니다.")
-        make_compose("red", red_port, host_port)
-        make_wait(red_port)
-        container_port = red_port
-        cur_name = "red"
+        revise_files("Red", red_port, host_port)
 else:
-    print("컨테이너 없음 그린을 빌드합니다.")
-    make_compose("green", green_port, host_port)
-    make_wait(green_port)
-    container_port = green_port
-    cur_name = "green"
+    revise_files("None", green_port, host_port)
 
 port_change(container_port, cur_name)
 # 빌드 시퀀스
