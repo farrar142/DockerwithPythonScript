@@ -6,7 +6,7 @@ def make_compose(name, web_port, connect_port):
         if "_color" in i:
             i = i.replace("_color", name)
         if "_ports" in i:
-            i = i.replace("_ports", f"{web_port}")
+            i = i.replace("_ports", f"{web_port}:{connect_port}")
         if "_connect" in i:
             i = i.replace("_connect", f"{connect_port}")
         dynamic.write(i)

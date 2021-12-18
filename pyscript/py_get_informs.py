@@ -34,11 +34,12 @@ def get_docker_imgs():
     logs = get_logs(cmd).split("\n")
     column = logs.pop(0)
     result = []
-    for line in logs:
-        words = line.split(" ")
-        while '' in words:
-            words.remove('')
-        result.append([words[0], words[2]])
+    if logs:
+        for line in logs:
+            words = line.split(" ")
+            while '' in words:
+                words.remove('')
+            result.append([words[0], words[2]])
     return result
 
 
