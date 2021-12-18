@@ -20,7 +20,7 @@ def port_change(port, color):
             os.mkdir(f"{path}/{sub_path}")
         except:
             print("error")
-
+    # 파일 카피
     static = open("./init/init_config", "r", encoding='utf8')
     dynamic = open(f"{path}/{sub_path}/location.conf", "w", encoding='utf8')
     for i in static:

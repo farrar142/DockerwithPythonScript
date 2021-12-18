@@ -1,7 +1,7 @@
 from pyscript.py_get_informs import *
 from pyscript.py_compose_changer import *
 from pyscript.py_port_changer import *
-from pyscript.py_wait_changer import *
+from pyscript.py_dockfile_changer import *
 import os
 import time
 
@@ -11,7 +11,7 @@ def revise_files(color, web_port, connect_port):
     _color = "red" if color == "green" else "green"
     print(f"현재 {_color}. {color}을 빌드합니다.")
     make_compose(color, web_port, connect_port)
-    make_wait(web_port)
+    dockfile_change(web_port)
     container_port = web_port
     cur_name = color
 

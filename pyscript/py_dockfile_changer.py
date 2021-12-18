@@ -1,4 +1,4 @@
-def make_wait(port):
+def dockfile_change(port):
     static = open("./init/init_dockerfile", "r", encoding='utf8')
     dynamic = open("Dockerfile", "w", encoding='utf8')
 
@@ -8,6 +8,3 @@ def make_wait(port):
         dynamic.write(i)
     static.close()
     dynamic.close()
-
-
-make_wait(8000)
