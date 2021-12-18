@@ -55,6 +55,7 @@ try:
     os.system(f'docker rm -f {current_running[1]}')
     os.system(f"docker rmi -f {current_running[2]}")
     #os.system('docker --remove-orphans')
+    os.system('systemctl reload nginx')
 except:
     print("알맞은 명령어가 아니에요")
 # os.system("docker ps -a")
