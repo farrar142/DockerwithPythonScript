@@ -13,9 +13,9 @@ services:
     image: nginx
     container_name: nginx
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./location/location.conf:/etc/nginx/location.d/location.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/location/location.conf:/etc/nginx/location.d/location.conf
     ports:
-      - "2000:80"
+      - "_connect:80"
     depends_on:
       - _color_web

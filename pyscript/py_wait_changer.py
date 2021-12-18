@@ -1,5 +1,5 @@
 def make_wait(port):
-    static = open("init_dockerfile", "r", encoding='utf8')
+    static = open("./init/init_dockerfile", "r", encoding='utf8')
     dynamic = open("Dockerfile", "w", encoding='utf8')
 
     for i in static:
