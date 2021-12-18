@@ -34,12 +34,12 @@ red_port = 8000
 green_port = 8010
 # 배포시에 실행되고 있는 웹 컨테이너가 있다면.current에 저장.
 # 현재 인스턴스 구하기
-current_running = get_current_container(get_informs())
-print(current_running)
+prev_con = get_current_container(get_informs())
+print(prev_con)
 container_port = 0
 # 비교 시퀀스
-if current_running:
-    if "red" in current_running[0]:
+if prev_con:
+    if "red" in prev_con[0]:
         revise_files("green", green_port, connect_port)
     else:
         revise_files("red", red_port, connect_port)
@@ -52,8 +52,8 @@ os.system(f'docker-compose -f {cur_name}-compose.yml up -d')
 # 종료시퀀스#
 try:
     time.sleep(20)
-    os.system(f'docker rm -f {current_running[1]}')
-    os.system(f"docker rmi -f {current_running[2]}")
+    os.system(f'docker rm -f {prev_con[1]}')
+    os.system(f"docker rmi -f {prev_con[2]}")
     #os.system('docker --remove-orphans')
     os.system('systemctl reload nginx')
 except:
