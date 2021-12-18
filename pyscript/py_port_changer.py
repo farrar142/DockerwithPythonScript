@@ -38,7 +38,7 @@ def port_change(port, color):
             pass
     static.close()
     dynamic.close()
-
+#
     config = open("./init/init_nginx.conf", "r", encoding='utf-8')
     target = open(f"{path}/nginx.conf", "w", encoding='utf-8')
     for i in config:
