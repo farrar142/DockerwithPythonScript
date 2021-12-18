@@ -11,7 +11,7 @@ def port_change(port, color):
         path = "./nginx"  # 테스트용
     else:
         path = "/etc/nginx"
-    sub_path = "location"
+    sub_path = "location.d"
 #
     # 경로가 존재하지 않으면 경로를 만듦
     if not os.path.isdir(f"{path}/{sub_path}"):
@@ -21,7 +21,7 @@ def port_change(port, color):
             print("error")
 
     static = open("./init/init_config", "r", encoding='utf8')
-    dynamic = open(f"{path}/location/location.conf", "w", encoding='utf8')
+    dynamic = open(f"{path}/{sub_path}/location.conf", "w", encoding='utf8')
     for i in static:
         try:
             if "port" in i:
