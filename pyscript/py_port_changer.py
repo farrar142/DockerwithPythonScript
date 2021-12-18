@@ -10,6 +10,7 @@ def port_change(port, color):
     if os.name == "nt":
         path = "./nginx"  # 테스트용
     else:
+        print("i'm linux")
         path = "/etc/nginx"
     sub_path = "location.d"
 #
@@ -31,7 +32,7 @@ def port_change(port, color):
                     i = i.replace("_color", color)
             else:
                 if "_color_web" in i:
-                    i = i.replace("_color", "localhost")
+                    i = i.replace("_color_web", "localhost")
             dynamic.write(i)
         except:
             pass
