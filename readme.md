@@ -21,5 +21,5 @@ EC2{
 이후 get_state할 때마다 nginx 가 :8000과 8010으로 연결을 바꿉니다.
 
 접속 주소는
-http://honeycombpizza.link/admin/login/?next=/admin/
+http://honeycombpizza.link/admin/
 입니다.
