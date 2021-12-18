@@ -26,8 +26,12 @@ def port_change(port, color):
         try:
             if "port" in i:
                 i = i.replace("port", str(port))
-            if "_color" in i:
-                i = i.replace("_color", color)
+            if os.name == "nt":
+                if "_color" in i:
+                    i = i.replace("_color", color)
+            else:
+                if "_color_web" in i:
+                    i = i.replace("_color", "localhost")
             dynamic.write(i)
         except:
             pass
