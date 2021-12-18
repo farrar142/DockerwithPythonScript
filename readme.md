@@ -32,8 +32,10 @@ http://honeycombpizza.link/admin/
 1.  py_get_state에서
     py_get_inform을 호출하여, shell exec에서
     실행된 명령의 결과를 가져옵니다.
+
     (컨테이너이름,ID,이미지이름,포트,IP를
     join하여 리스트형태로 만듭니다.)
+
 2.  현재 실행되고 있는 컨테이너 중에 web으로 설정한
     컨테이너가 있으면 prev_con에 저장합니다.
 3.  새 이미지와 컨테이너를 빌드합니다.
