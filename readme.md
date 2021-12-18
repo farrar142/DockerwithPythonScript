@@ -45,3 +45,5 @@ http://honeycombpizza.link/admin/
 7.  nginx의 포트를 새 포트로 바꾸고 리로드합니다.
 8.  prev_con에 저장된 컨테이너 이름과, 이미지를 이용해
 9.  shell exec에 도커 컨테이너, 이미지 삭제명령을 호출합니다.#
+
+#
