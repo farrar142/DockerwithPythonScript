@@ -15,8 +15,10 @@ def port_change(port, color):
 
     # 경로가 존재하지 않으면 경로를 만듦
     if not os.path.isdir(f"{path}/{sub_path}"):
-        os.mkdir(f"{path}")
-        os.mkdir(f"{path}/{sub_path}")
+        try:
+            os.mkdir(f"{path}/{sub_path}")
+        except:
+            print("error")
 
     static = open("./init/init_config", "r", encoding='utf8')
     dynamic = open(f"{path}/location/location.conf", "w", encoding='utf8')
