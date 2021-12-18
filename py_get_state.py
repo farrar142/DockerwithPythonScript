@@ -49,7 +49,7 @@ else:
 port_change(container_port, cur_name)
 # 빌드 시퀀스
 os.system(f'docker-compose -f {cur_name}-compose.yml up -d')
-# 종료시퀀스#
+# 종료시퀀스
 try:
     time.sleep(20)
     os.system(f'docker rm -f {current_running[1]}')
