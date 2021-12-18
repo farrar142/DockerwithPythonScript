@@ -39,6 +39,7 @@ def get_docker_imgs():
             words = line.split(" ")
             while '' in words:
                 words.remove('')
+            print(words)
             result.append([words[0], words[2]])
     return result
 
