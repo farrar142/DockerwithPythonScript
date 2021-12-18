@@ -12,7 +12,7 @@ def port_change(port, color):
     else:
         path = "/etc/nginx"
     sub_path = "location"
-
+#
     # 경로가 존재하지 않으면 경로를 만듦
     if not os.path.isdir(f"{path}/{sub_path}"):
         try:
